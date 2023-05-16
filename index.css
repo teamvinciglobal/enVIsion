@@ -248,9 +248,59 @@ body {
     font-size:20px;
   }
 
-  .btn span a{
+.btn span a{
     color: white;
     text-decoration: none;
+}
+
+audio {
+    display: none;
+}
+
+.mbtn {
+    font-size: 16px;
+    color: #eee;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(2,2);
+    width: auto;
+    padding: 15px;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    background: rgba(20, 17, 24, 0.8);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+  }
+
+  .mbtn span {
+    visibility: hidden;
+  }
+
+  .mbtn:hover span {
+    visibility: visible;
+  }
+  
+  .mbtn.fade:hover {
+    opacity: 0.8;
+  }
+  
+  .fade {
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+
+  .fade span {
+    visibility: hidden;
+
+  }
+  .mbtn.fade:hover span{
+    visibility: visible;
   }
 
 #stars {
