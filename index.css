@@ -367,7 +367,7 @@ audio {
     .card {
         position: relative;
         width: auto;
-        max-width: 300px;
+        max-width: 380px;
         transition: 0.5s;
     }
     .card img {

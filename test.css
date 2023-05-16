@@ -86,11 +86,61 @@ h1 {
     box-shadow: 1369px 1973px #FFF , 1255px 1919px #FFF , 570px 1280px #FFF , 1376px 268px #FFF , 399px 1216px #FFF , 1221px 663px #FFF , 148px 1497px #FFF , 1029px 1497px #FFF , 240px 255px #FFF , 936px 1529px #FFF , 1654px 1190px #FFF , 1273px 1175px #FFF , 116px 941px #FFF , 556px 1585px #FFF , 449px 1057px #FFF , 976px 572px #FFF , 343px 43px #FFF , 815px 1395px #FFF , 775px 488px #FFF , 1401px 710px #FFF , 1061px 455px #FFF , 418px 395px #FFF , 758px 835px #FFF , 590px 1333px #FFF , 624px 563px #FFF , 502px 536px #FFF , 1849px 94px #FFF , 216px 358px #FFF , 1929px 1168px #FFF , 483px 1744px #FFF , 1577px 1440px #FFF , 950px 1312px #FFF , 816px 1052px #FFF , 123px 1616px #FFF , 730px 748px #FFF , 527px 1817px #FFF , 1713px 694px #FFF , 80px 911px #FFF , 889px 1971px #FFF , 1683px 250px #FFF , 391px 789px #FFF , 672px 1074px #FFF , 1187px 1587px #FFF , 474px 476px #FFF , 1367px 1268px #FFF , 1396px 649px #FFF , 813px 482px #FFF , 1994px 1462px #FFF , 1155px 810px #FFF , 1227px 1158px #FFF , 320px 1232px #FFF , 1512px 1080px #FFF , 561px 276px #FFF , 1750px 71px #FFF , 1988px 644px #FFF , 1858px 497px #FFF , 856px 893px #FFF , 1108px 475px #FFF , 1230px 1332px #FFF , 124px 888px #FFF , 1467px 1028px #FFF , 699px 1553px #FFF , 908px 510px #FFF , 301px 1565px #FFF , 357px 803px #FFF , 213px 247px #FFF , 1963px 1930px #FFF , 935px 1027px #FFF , 10px 608px #FFF , 1654px 1202px #FFF , 235px 1531px #FFF , 240px 1751px #FFF , 84px 1084px #FFF , 1913px 1555px #FFF , 1112px 1709px #FFF , 312px 1577px #FFF , 1525px 1473px #FFF , 566px 919px #FFF , 896px 731px #FFF , 1594px 1680px #FFF , 729px 892px #FFF , 416px 1525px #FFF , 475px 213px #FFF , 575px 1849px #FFF , 670px 1056px #FFF , 543px 1404px #FFF , 260px 347px #FFF , 1852px 1174px #FFF , 1090px 1896px #FFF , 897px 1240px #FFF , 636px 193px #FFF , 855px 1826px #FFF , 1210px 1767px #FFF , 538px 1827px #FFF , 521px 1334px #FFF , 1859px 875px #FFF , 1950px 471px #FFF , 170px 1003px #FFF , 1683px 297px #FFF , 569px 1977px #FFF;
   }
 
-  @keyframes animStar {
+@keyframes animStar {
     from {
       transform: translateY(0px);
     }
     to {
       transform: translateY(-2000px);
     }
+}
+
+audio {
+  display: none;
+}
+
+.mbtn {
+  font-size: 16px;
+  color: #eee;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(2,2);
+  width: auto;
+  padding: 15px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  background: rgba(20, 17, 24, 0.8);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+}
+
+.mbtn span {
+  visibility: hidden;
+}
+
+.mbtn:hover span {
+  visibility: visible;
+}
+
+.mbtn.fade:hover {
+  opacity: 0.8;
+}
+
+.fade {
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
+}
+
+.fade span {
+  visibility: hidden;
+
+}
+.mbtn.fade:hover span{
+  visibility: visible;
 }
