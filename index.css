@@ -377,6 +377,10 @@ audio {
     .card:hover img {
         height: 190px;
     }
+
+    .card:hover content {
+        width: 40%;
+    }
     .card .content {
         width: 50%;
     }
