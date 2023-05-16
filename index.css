@@ -363,6 +363,27 @@ audio {
     }
   }
 
+@media (max-width:1300px) {
+    .card {
+        position: relative;
+        width: auto;
+        max-width: 300px;
+        transition: 0.5s;
+    }
+    .card img {
+        bottom: 30%;
+        height: 120px;
+    }
+    .card:hover img {
+        height: 190px;
+    }
+    .card .content {
+        width: 50%;
+    }
+    .card:hover .content {
+        width: 100%;
+    }
+}
 @media (max-width:990px)
 {
     .sections{
