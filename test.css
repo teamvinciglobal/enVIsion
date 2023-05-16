@@ -22,7 +22,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    scroll-snap-align: start;
+}
+
+.container-box {
+  background: #ffffff;
+  width: 50%;
+  border-radius: 20px;
+  opacity: 20%;
 }
 
 h1 {
