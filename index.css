@@ -182,7 +182,7 @@ body {
 .card .content h1 {
     color: #ffffff;
     text-transform: uppercase;
-    font-size: 2.5em;
+    font-size: 2em;
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
     line-height: 1em;
@@ -387,6 +387,9 @@ audio {
 }
 @media (max-width:990px)
 {
+    .center {
+        margin-top: 30%;
+    }
     .sections{
         width: 100%;
         height: 100%;
@@ -460,6 +463,9 @@ audio {
 
 @media (max-width:420px)
 {
+    .center {
+        margin-top: 40%;
+      }
     #factions {
         background: radial-gradient(ellipse at bottom, #000004 0%, #000004 100%);
         color: #ffffff;
