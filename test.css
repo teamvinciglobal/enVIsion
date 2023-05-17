@@ -385,10 +385,16 @@ audio {
   #next-btn {
     margin-left: 45%;
   }
+  #logo-faction {
+    margin-left: 30%;
+  }
 }
 
 @media (max-width:420px)
 {
+  #logo-faction {
+    margin-left: 30%;
+  }
   .test_container{
     width: 600px;
     height: 1200px;
