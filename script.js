@@ -207,6 +207,7 @@ function showResult(){
   
   questionElement.innerHTML = `You belong to the ${key} Faction!`
   paragraphElement.innerHTML = `${desc}`
+  paragraphElement.style.display = "block"
   myImg.style.display = "block"
   referenceElement.style.display = "block"
   nextButton.style.display = "block"
