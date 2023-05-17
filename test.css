@@ -421,3 +421,7 @@ audio {
   margin-left: 35%;
 }
 }
+
+#faction-buttons {
+  display: none;
+}

@@ -18,7 +18,7 @@ button.addEventListener("click", () => {
 });
 
 /** JS FOR TEST.CSS */
-
+const checker = 0;
 const question = [
   {
     question: "Your Aptitude Test starts right here. Choose one of the following items to enter the next chapter.",
@@ -86,6 +86,7 @@ const question = [
 const questionElement = document.getElementById("question");
 const paragraphElement = document.getElementById("ques-text");
 const referenceElement = document.getElementById("ref-text");
+const factionButtons = document.getElementById("faction-buttons");
 const myImg = document.querySelector("img");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
@@ -96,6 +97,7 @@ var amity = 0;
 var candor = 0;
 var dauntless = 0;
 var erudite = 0;
+var key;
 
 var factions = {abnegation, amity, candor, dauntless, erudite}
 
@@ -177,7 +179,6 @@ function showResult(){
   resetState();
 
   const maxVal = Math.max(abnegation, amity, candor, dauntless, erudite);
-  var key;
   var desc;
   if (maxVal==abnegation) {
     myImg["src"] ="./images/abnegation.png";
@@ -212,22 +213,62 @@ function showResult(){
   referenceElement.style.display = "block"
   nextButton.style.display = "block"
 }
+function abnFaction(){
+  location.replace("https://www.twibbonize.com/envisionabnegation");
+}
+
+function amiFaction(){
+  location.replace("https://www.twibbonize.com/envisionamity");
+}
+function canFaction(){
+  location.replace("https://www.twibbonize.com/envisioncandor");
+}
+function daunFaction(){
+  location.replace("https://www.twibbonize.com/envisiondauntless");
+}
+function eruFaction(){
+  location.replace("https://www.twibbonize.com/envisionerudite");
+}
 
 function chooseFaction(){
   resetState();
-  questionElement.innerHTML = `You belong to the ${key} Faction!`
+  /*var btnabn = document.createElement("BUTTON");
+  btnabn.innerHTML = "Abnegation";
+  btnabn.id = "abnfaction";
+  btnabn.onselect = abnFaction();
+  btnabn.classList.add("ansbtn");
+  answerButtons.appendChild(btnabn);
 
-  factions.forEach(factions => {
-    const button = document.createElement("button");
-    button.innerHTML = factions;
-    button.classList.add("ansbtn");
-    answerButtons.appendChild(button);
-    if(answer.faction){
-      button.dataset.faction = answer.faction;
-    }
-    button.addEventListener("click", selectAnswer);
-  });
+  var btnami = document.createElement("BUTTON");
+  btnami.innerHTML = "Amity";
+  btnami.id = "amifaction"
+  btnami.classList.add("ansbtn");
+  answerButtons.appendChild(btnami);
+
+  var btncan = document.createElement("BUTTON");
+  btncan.innerHTML = "Candor";
+  btn.id = "canfaction"
+  btncan.classList.add("ansbtn");
+  answerButtons.appendChild(btncan);
+
+  var btndaun = document.createElement("BUTTON");
+  btndaun.innerHTML = "Dauntless";
+  btn.id = "daunfaction"
+  btndaun.classList.add("ansbtn");
+  answerButtons.appendChild(btndaun);
+
+  var btneru = document.createElement("BUTTON");
+  btneru.innerHTML = "Erudite";
+  btneru.id = "erufaction"
+  btneru.classList.add("ansbtn");
+  answerButtons.appendChild(btneru);*/
+
+  paragraphElement.innerHTML = "It is time to choose your faction. One click can transform you, BE CAREFUL."
+  paragraphElement.style.display = "block";
+  factionButtons.style.display = "block"
 }
+
+
 
 function handleNextButton(){
   currentQuestionIndex++;
@@ -244,6 +285,9 @@ nextButton.addEventListener("click", ()=>{
   }
   else {
     chooseFaction();
+  }
+  if (checker>0){
+    submitFaction();
   }
 });
 startTest();
