@@ -183,7 +183,6 @@ audio {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
 }
 .test_container::before{
   
@@ -258,7 +257,7 @@ audio {
   color: white;
   display: none;
   margin-right: 50%;
-  margin-left: 40%;
+  margin-left: 45%;
   margin-top: 10px;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 700;
@@ -319,4 +318,77 @@ audio {
   background: #1662B2;
   box-shadow: 0 2px 20px #1662B2;
   color: #ffffff;
+}
+
+#ref-text {
+  color: #ffffff;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 10px;
+  text-align: justify;
+  text-justify: inter-word;
+  display: none;
+}
+
+#logo-faction {
+  height: 150px;
+  margin-left: 40%;
+  transition: 0.5s;
+  position: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+@media (max-width:1300px) {
+  .test_container{
+    width: 1000px;
+    height: 700px;
+  }
+}
+
+@media (max-width:990px)
+{
+  .test_container{
+    width: 800px;
+    height: 1500px;
+  }
+  #next-btn {
+    margin-left: 45%;
+  }
+}
+
+@media (max-width:420px)
+{
+  .test_container{
+    width: 600px;
+    height: 1200px;
+  }
+
+  .test_form{
+    padding: 30px 50px;
+    color: #00ccff;
+  }
+
+  h1 {
+    font-size: 40px;
+}
+
+.aptitude h2 {
+  font-size: 20px;
+}
+
+.test_form h4 {
+    font-size: 20px;
+}
+
+.test_form p {
+  color: #ffffff;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 18px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+#next-btn {
+  margin-left: 35%;
+}
 }

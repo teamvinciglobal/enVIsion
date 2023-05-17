@@ -84,6 +84,9 @@ const question = [
 ]
 
 const questionElement = document.getElementById("question");
+const paragraphElement = document.getElementById("ques-text");
+const referenceElement = document.getElementById("ref-text");
+const myImg = document.querySelector("img");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 
@@ -126,6 +129,9 @@ function showQuestion(){
 }
 
 function resetState(){
+  paragraphElement.style.display = "none"
+  myImg.style.display = "none"
+  referenceElement.style.display = "none"
   nextButton.style.display = "none"
   while(answerButtons.firstChild){
     answerButtons.removeChild(answerButtons.firstChild);
@@ -172,29 +178,59 @@ function showResult(){
 
   const maxVal = Math.max(abnegation, amity, candor, dauntless, erudite);
   var key;
-  var icon;
+  var desc;
   if (maxVal==abnegation) {
+    myImg["src"] ="./images/abnegation.png";
     key = "ABNEGATION";
+    desc = "Working always to slough away the vain and greedy needs of the self, you know the meaning of abnegation. There can be no greater purpose than helping others, and achieving that end means giving up trivial desires. You look for the same quality in others and abhor nothing more than hedonism and greed";
   }
   else if (maxVal==amity) {
+    myImg["src"] ="./images/amity.png";
     key = "AMITY";
+    desc = "Open and caring, you see the beauty in others easily, and know that's the first step in building a lasting friendship. If everyone could come around to your way of thinking, it would solve a lot of life's big problems. A natural at conflict resolution, you want to make the world a better place for everyone in it.";
   }
   else if (maxVal==candor) {
+    myImg["src"] ="./images/candor.png";
     key = "CANDOR";
+    desc = "Truth is a shining beacon in the gloom of ignorance, and sometimes it seems like only you can see it. Lying doesn't come easy for you. You wouldn't want it to, and you tend to know when others are being dishonest. Thuth is beauty while deception, no matter how small, can lead to ruin.";
   }
   else if (maxVal==dauntless) {
+    myImg["src"] ="./images/dauntless.png";
     key = "DAUNTLESS";
+    desc = "You've explored the depths of your inner darkness and come back stronger. You are Dauntless. Unstoppable in the face of danger, you know bravery isn't about being fearless. It's about controlling your fear in a way only a select few can. Now it's up to you to walk the path of hener and reject the ruthless cowards who may tempt you along the way.";
   }
   else if (maxVal==erudite) {
+    myImg["src"] = "./images/erudite.png";
     key = "ERUDITE";
+    desc = "Knowledge is the first step on your path to prosperity, power, and understanding. A great mind can be a formidable weapon, and you wield yours with skill. Never happier than when you've figured out the solution to a problem, you crave learning. Just be careful where it leads you.";
   }
   
   questionElement.innerHTML = `You belong to the ${key} Faction!`
+  paragraphElement.innerHTML = `${desc}`
+  myImg.style.display = "block"
+  referenceElement.style.display = "block"
+  nextButton.style.display = "block"
+}
+
+function chooseFaction(){
+  resetState();
+  questionElement.innerHTML = `You belong to the ${key} Faction!`
+
+  factions.forEach(factions => {
+    const button = document.createElement("button");
+    button.innerHTML = factions;
+    button.classList.add("ansbtn");
+    answerButtons.appendChild(button);
+    if(answer.faction){
+      button.dataset.faction = answer.faction;
+    }
+    button.addEventListener("click", selectAnswer);
+  });
 }
 
 function handleNextButton(){
   currentQuestionIndex++;
-  if(currentQuestionIndex <question.length){
+  if(currentQuestionIndex < question.length){
     showQuestion();
   }else{
     showResult();
@@ -206,7 +242,7 @@ nextButton.addEventListener("click", ()=>{
     handleNextButton();
   }
   else {
-    startTest();
+    chooseFaction();
   }
 });
 startTest();
