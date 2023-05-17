@@ -54,7 +54,7 @@ const question = [
     question: "What do you mostly rely on when making tough decisions? ",
     answer: [
       {text: "I trust others, so that's the best approach.", faction:"Abnegation"},
-      {text: "I learn from my experiences so I go with my experience.", faction:"Amity"},
+      {text: "I go to whatever makes me happy.", faction:"Amity"},
       {text: "I always rely on my gut and luck.", faction:"Dauntless"},
       {text: "I learn from my experiences so I go with my experience.", faction:"Candor"},
       {text: "I go with my intelligence.", faction:"Erudite"},
@@ -88,11 +88,11 @@ const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 
 let currentQuestionIndex = 0;
-let abnegation = 0;
-let amity = 0;
-let candor = 0;
-let dauntless = 0;
-let erudite = 0;
+var abnegation = 0;
+var amity = 0;
+var candor = 0;
+var dauntless = 0;
+var erudite = 0;
 
 var factions = {abnegation, amity, candor, dauntless, erudite}
 
@@ -135,20 +135,28 @@ function resetState(){
 
 function selectAnswer(e){
   const selectedBtn = e.target;
-  const chosenFaction = selectedBtn.dataset.faction;
-  if(chosenFaction === "Abnegation"){
+  const chosenAbn = selectedBtn.dataset.faction === "Abnegation";
+  const chosenAmi = selectedBtn.dataset.faction === "Amity";
+  const chosenDau = selectedBtn.dataset.faction === "Dauntless";
+  const chosenCan = selectedBtn.dataset.faction === "Candor";
+  const chosenEru = selectedBtn.dataset.faction === "Erudite";
+  if(chosenAbn){
     selectedBtn.classList.add("Abnegation");
     abnegation++;
-  }else if(chosenFaction === "Amity"){
+  }
+  if(chosenAmi){
     selectedBtn.classList.add("Amity");
     amity++;
-  }else if(chosenFaction === "Dauntless"){
+  }
+  if(chosenDau){
     selectedBtn.classList.add("Dauntless");
     dauntless++;
-  }else if(chosenFaction === "Candor"){
+  }
+  if(chosenCan){
     selectedBtn.classList.add("Candor");
     candor++;
-  }else if(chosenFaction === "Erudite"){
+  }
+  if(chosenEru){
     selectedBtn.classList.add("Erudite");
     erudite++;
   }
@@ -161,8 +169,26 @@ function selectAnswer(e){
 
 function showResult(){
   resetState();
-  const maxVal = Math.max(...Object.values(factions))
-  const key = Object.keys(factions).find(key => factions[key] === maxVal)
+
+  const maxVal = Math.max(abnegation, amity, candor, dauntless, erudite);
+  var key;
+  var icon;
+  if (maxVal==abnegation) {
+    key = "ABNEGATION";
+  }
+  else if (maxVal==amity) {
+    key = "AMITY";
+  }
+  else if (maxVal==candor) {
+    key = "CANDOR";
+  }
+  else if (maxVal==dauntless) {
+    key = "DAUNTLESS";
+  }
+  else if (maxVal==erudite) {
+    key = "ERUDITE";
+  }
+  
   questionElement.innerHTML = `You belong to the ${key} Faction!`
 }
 

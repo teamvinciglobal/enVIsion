@@ -200,13 +200,13 @@ body {
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
     line-height: 1em;
-    margin-bottom: 8%;
+    margin-bottom: 50px;
 }
 .center {
     width: 180px;
     height: 60px;
     position: absolute;
-    margin-top: 10%;
+    margin-top: 250px;
   }
   
   .btn {
