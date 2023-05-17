@@ -352,6 +352,35 @@ audio {
     width: 800px;
     height: 1500px;
   }
+  .test_container{
+    width: 600px;
+    height: 1200px;
+  }
+
+  .test_form{
+    padding: 30px 50px;
+    color: #00ccff;
+  }
+
+  h1 {
+    font-size: 40px;
+}
+
+.aptitude h2 {
+  font-size: 20px;
+}
+
+.test_form h4 {
+    font-size: 20px;
+}
+
+.test_form p {
+  color: #ffffff;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 18px;
+  text-align: justify;
+  text-justify: inter-word;
+}
   #next-btn {
     margin-left: 45%;
   }
