@@ -200,7 +200,6 @@ body {
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
     line-height: 1em;
-    margin-bottom: 50px;
 }
 .center {
     width: 180px;
@@ -451,7 +450,6 @@ audio {
     }
     #aptitude h1 {
         font-size: 4.0em;
-        margin-bottom: 10%;
         margin-left: 50%;
         margin-right: 50%;
         text-align: center;
@@ -480,7 +478,6 @@ audio {
     }
     #aptitude h1 {
         font-size: 2.5em;
-        margin-bottom: 10%;
         margin-left: 50%;
         margin-right: 50%;
         text-align: center;
